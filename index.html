@@ -3,690 +3,801 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SoCal Keys — Elite Short Term Rental Management</title>
+<title>SoCal Keys — Elite Short Term Rental Management | Orange County & San Diego</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --sand: #F5EFE4;
-    --cream: #FAF7F2;
-    --ink: #1A1714;
-    --gold: #C9A84C;
-    --gold-light: #E8C96D;
-    --terracotta: #C4633A;
-    --ocean: #2B5F75;
-    --warm-gray: #8C8278;
-    --border: rgba(201,168,76,0.25);
-  }
+:root {
+--sand: #F5EFE4;
+--cream: #FAF7F2;
+--ink: #1A1714;
+--gold: #C9A84C;
+--gold-light: #E8C96D;
+--terracotta: #C4633A;
+--ocean: #2B5F75;
+--warm-gray: #8C8278;
+--border: rgba(201,168,76,0.25);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+background: var(--cream); color: var(--ink);
+font-family: 'Barlow', sans-serif; font-weight: 300; overflow-x: hidden;
+}
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+/* NAV */
+nav {
+position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+display: flex; justify-content: space-between; align-items: center;
+padding: 18px 60px;
+background: rgba(250,247,242,0.95); backdrop-filter: blur(14px);
+border-bottom: 1px solid var(--border);
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-logo-text {
+font-family: 'Cormorant Garamond', serif;
+font-size: 22px; letter-spacing: 3px; font-weight: 600; color: var(--ink); text-transform: uppercase;
+}
+.nav-logo-text span { color: var(--gold); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+color: var(--warm-gray); text-decoration: none; font-weight: 400; transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+background: var(--gold); color: var(--ink); padding: 10px 28px;
+font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+font-weight: 600; text-decoration: none; transition: background 0.3s; display: inline-block;
+}
+.nav-cta:hover { background: var(--gold-light); }
 
-  html { scroll-behavior: smooth; }
+/* HERO */
+.hero {
+min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
+padding-top: 80px; position: relative; overflow: hidden;
+}
+.hero-left {
+display: flex; flex-direction: column; justify-content: center;
+padding: 80px 60px 80px 80px; position: relative; z-index: 2;
+}
+.hero-eyebrow {
+font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+color: var(--gold); font-weight: 500; margin-bottom: 28px;
+display: flex; align-items: center; gap: 12px;
+}
+.hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+.hero-h1 {
+font-family: 'Cormorant Garamond', serif;
+font-size: clamp(48px, 5.5vw, 84px); font-weight: 300; line-height: 1.0;
+margin-bottom: 32px; letter-spacing: -1px;
+}
+.hero-h1 em { font-style: italic; color: var(--terracotta); }
+.hero-sub {
+font-size: 16px; line-height: 1.9; color: var(--warm-gray);
+max-width: 440px; margin-bottom: 48px; font-weight: 300;
+}
+.hero-stats {
+display: flex; gap: 40px; margin-bottom: 48px;
+padding: 32px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.stat-num {
+font-family: 'Cormorant Garamond', serif;
+font-size: 48px; font-weight: 300; color: var(--ink); line-height: 1;
+}
+.stat-num span { color: var(--gold); }
+.stat-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--warm-gray); margin-top: 6px; }
+.hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+background: var(--ink); color: var(--cream); padding: 16px 40px;
+font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+font-weight: 500; border: none; cursor: pointer; transition: all 0.3s;
+text-decoration: none; display: inline-block;
+}
+.btn-primary:hover { background: var(--ocean); }
+.btn-outline {
+background: transparent; color: var(--ink); padding: 16px 40px;
+font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+font-weight: 500; border: 1px solid var(--ink); cursor: pointer;
+transition: all 0.3s; text-decoration: none; display: inline-block;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
 
-  body {
-    background: var(--cream);
-    color: var(--ink);
-    font-family: 'Barlow', sans-serif;
-    font-weight: 300;
-    overflow-x: hidden;
-  }
+.hero-right { position: relative; overflow: hidden; background: var(--ocean); }
+.hero-bg-pattern {
+position: absolute; inset: 0;
+background-image:
+radial-gradient(circle at 30% 50%, rgba(201,168,76,0.18) 0%, transparent 60%),
+radial-gradient(circle at 80% 20%, rgba(196,99,58,0.12) 0%, transparent 50%);
+}
+.hero-img-overlay {
+position: absolute; inset: 0;
+background: linear-gradient(135deg, rgba(43,95,117,0.65) 0%, rgba(26,23,20,0.5) 100%);
+z-index: 1;
+}
+.hero-key-watermark {
+position: absolute; top: 50%; left: 50%;
+transform: translate(-50%, -50%) rotate(-20deg);
+width: 380px; height: 380px; opacity: 0.07; z-index: 1;
+}
+.hero-right-content {
+position: absolute; inset: 0; z-index: 2;
+display: flex; flex-direction: column; justify-content: flex-end; padding: 60px;
+}
+.hero-location-badge {
+display: inline-flex; align-items: center; gap: 10px;
+background: rgba(201,168,76,0.18); border: 1px solid rgba(201,168,76,0.5);
+padding: 10px 20px; margin-bottom: 24px; width: fit-content;
+}
+.hero-location-badge span {
+font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+color: var(--gold-light); font-weight: 500;
+}
+.hero-quote {
+font-family: 'Cormorant Garamond', serif;
+font-size: 26px; font-style: italic; font-weight: 300;
+color: white; line-height: 1.5; margin-bottom: 20px;
+}
+.hero-stars { display: flex; gap: 4px; margin-bottom: 8px; }
+.hero-stars span { color: var(--gold); font-size: 18px; }
+.hero-review-meta { font-size: 12px; color: rgba(255,255,255,0.55); letter-spacing: 1px; }
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 24px 60px;
-    background: rgba(250,247,242,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px; letter-spacing: 3px;
-    font-weight: 600; color: var(--ink);
-    text-transform: uppercase;
-  }
-  .nav-logo span { color: var(--gold); }
-  .nav-links { display: flex; gap: 40px; list-style: none; }
-  .nav-links a {
-    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--warm-gray); text-decoration: none; font-weight: 400;
-    transition: color 0.3s;
-  }
-  .nav-links a:hover { color: var(--gold); }
-  .nav-cta {
-    background: var(--gold); color: var(--ink);
-    padding: 10px 28px; font-size: 11px; letter-spacing: 2px;
-    text-transform: uppercase; font-weight: 600; border: none; cursor: pointer;
-    transition: background 0.3s;
-    text-decoration: none;
-  }
-  .nav-cta:hover { background: var(--gold-light); }
+.floating-card {
+position: absolute; background: white; padding: 20px 24px; z-index: 3;
+box-shadow: 0 20px 60px rgba(0,0,0,0.15); animation: float 6s ease-in-out infinite;
+}
+.floating-card.card-1 { top: 140px; right: -20px; width: 200px; }
+.floating-card.card-2 { bottom: 200px; left: -20px; width: 180px; animation-delay: -3s; }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+.fc-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 8px; }
+.fc-value { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--ink); }
+.fc-value span { color: var(--gold); }
+.fc-sub { font-size: 11px; color: var(--warm-gray); margin-top: 4px; }
 
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: grid; grid-template-columns: 1fr 1fr;
-    padding-top: 80px;
-    position: relative; overflow: hidden;
-  }
-  .hero-left {
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 80px 60px 80px 80px;
-    position: relative; z-index: 2;
-  }
-  .hero-eyebrow {
-    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
-    color: var(--gold); font-weight: 500; margin-bottom: 28px;
-    display: flex; align-items: center; gap: 12px;
-  }
-  .hero-eyebrow::before {
-    content: ''; display: block; width: 40px; height: 1px; background: var(--gold);
-  }
-  .hero-h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(52px, 6vw, 88px);
-    font-weight: 300; line-height: 1.0;
-    margin-bottom: 32px;
-    letter-spacing: -1px;
-  }
-  .hero-h1 em { font-style: italic; color: var(--terracotta); }
-  .hero-sub {
-    font-size: 16px; line-height: 1.8; color: var(--warm-gray);
-    max-width: 420px; margin-bottom: 48px; font-weight: 300;
-  }
-  .hero-stats {
-    display: flex; gap: 40px; margin-bottom: 48px;
-    padding: 32px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-  }
-  .stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px; font-weight: 300; color: var(--ink); line-height: 1;
-  }
-  .stat-num span { color: var(--gold); }
-  .stat-label {
-    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--warm-gray); margin-top: 6px;
-  }
-  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
-  .btn-primary {
-    background: var(--ink); color: var(--cream);
-    padding: 16px 40px; font-size: 12px; letter-spacing: 2px;
-    text-transform: uppercase; font-weight: 500; border: none; cursor: pointer;
-    transition: all 0.3s; text-decoration: none; display: inline-block;
-  }
-  .btn-primary:hover { background: var(--ocean); }
-  .btn-outline {
-    background: transparent; color: var(--ink);
-    padding: 16px 40px; font-size: 12px; letter-spacing: 2px;
-    text-transform: uppercase; font-weight: 500;
-    border: 1px solid var(--ink); cursor: pointer;
-    transition: all 0.3s; text-decoration: none; display: inline-block;
-  }
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+/* MARQUEE */
+.marquee-strip {
+background: var(--ink); padding: 16px 0; overflow: hidden;
+border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+}
+.marquee-track { display: flex; animation: marquee 24s linear infinite; white-space: nowrap; }
+.marquee-item {
+font-family: 'Barlow Condensed', sans-serif; font-size: 13px;
+letter-spacing: 3px; text-transform: uppercase; color: var(--sand);
+padding: 0 48px; font-weight: 400; display: inline-flex; align-items: center; gap: 48px;
+}
+.marquee-item::after { content: '✦'; color: var(--gold); font-size: 10px; }
+@keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
-  .hero-right {
-    position: relative; overflow: hidden;
-    background: var(--ocean);
-  }
-  .hero-img-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(43,95,117,0.7) 0%, rgba(26,23,20,0.5) 100%);
-    z-index: 1;
-  }
-  .hero-bg-pattern {
-    position: absolute; inset: 0;
-    background-image:
-      radial-gradient(circle at 30% 50%, rgba(201,168,76,0.15) 0%, transparent 60%),
-      radial-gradient(circle at 80% 20%, rgba(196,99,58,0.1) 0%, transparent 50%);
-  }
-  .hero-right-content {
-    position: absolute; inset: 0; z-index: 2;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 60px;
-  }
-  .hero-location-badge {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: rgba(201,168,76,0.2); border: 1px solid rgba(201,168,76,0.5);
-    padding: 10px 20px; margin-bottom: 24px; width: fit-content;
-  }
-  .hero-location-badge span {
-    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--gold-light); font-weight: 500;
-  }
-  .hero-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 28px; font-style: italic; font-weight: 300;
-    color: white; line-height: 1.5; margin-bottom: 20px;
-  }
-  .hero-stars { display: flex; gap: 4px; margin-bottom: 8px; }
-  .hero-stars span { color: var(--gold); font-size: 18px; }
-  .hero-review-meta { font-size: 12px; color: rgba(255,255,255,0.6); letter-spacing: 1px; }
+/* SECTIONS */
+section { padding: 120px 80px; }
+.section-eyebrow {
+font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+color: var(--gold); font-weight: 500; margin-bottom: 20px;
+display: flex; align-items: center; gap: 12px;
+}
+.section-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+.section-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: clamp(36px, 4vw, 62px); font-weight: 300; line-height: 1.1; margin-bottom: 24px;
+}
+.section-title em { font-style: italic; color: var(--terracotta); }
 
-  /* FLOATING CARDS */
-  .floating-card {
-    position: absolute; background: white;
-    padding: 20px 24px; z-index: 3;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-    animation: float 6s ease-in-out infinite;
-  }
-  .floating-card.card-1 { top: 140px; right: -20px; width: 200px; }
-  .floating-card.card-2 { bottom: 200px; left: -20px; width: 180px; animation-delay: -3s; }
-  @keyframes float {
-    0%,100% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
-  }
-  .fc-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 8px; }
-  .fc-value { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--ink); }
-  .fc-value span { color: var(--gold); }
-  .fc-sub { font-size: 11px; color: var(--warm-gray); margin-top: 4px; }
+/* WHY US */
+.why-us { background: var(--sand); }
+.why-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: center; }
+.why-left p { font-size: 17px; line-height: 1.9; color: var(--warm-gray); margin-bottom: 40px; }
+.pillars { display: flex; flex-direction: column; }
+.pillar {
+display: flex; align-items: flex-start; gap: 24px;
+padding: 28px 0; border-bottom: 1px solid var(--border); transition: all 0.3s;
+}
+.pillar:first-child { border-top: 1px solid var(--border); }
+.pillar:hover { padding-left: 8px; }
+.pillar-num {
+font-family: 'Cormorant Garamond', serif;
+font-size: 42px; font-weight: 300; color: var(--border); line-height: 1;
+min-width: 52px; transition: color 0.3s;
+}
+.pillar:hover .pillar-num { color: var(--gold); }
+.pillar-title {
+font-family: 'Barlow Condensed', sans-serif; font-size: 18px;
+letter-spacing: 1px; font-weight: 600; text-transform: uppercase; margin-bottom: 8px;
+}
+.pillar-text { font-size: 14px; line-height: 1.7; color: var(--warm-gray); }
 
-  /* MARQUEE STRIP */
-  .marquee-strip {
-    background: var(--ink); padding: 16px 0; overflow: hidden;
-    border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
-  }
-  .marquee-track {
-    display: flex; gap: 0; animation: marquee 20s linear infinite;
-    white-space: nowrap;
-  }
-  .marquee-item {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
-    color: var(--sand); padding: 0 48px; font-weight: 400;
-    display: inline-flex; align-items: center; gap: 48px;
-  }
-  .marquee-item::after { content: '✦'; color: var(--gold); font-size: 10px; }
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+.why-right { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.why-card {
+background: white; padding: 36px 28px;
+border-bottom: 3px solid transparent; transition: border-color 0.3s, transform 0.3s;
+}
+.why-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+.why-card:nth-child(2) { margin-top: 40px; }
+.why-card:nth-child(4) { margin-top: -40px; }
+.why-icon { font-size: 32px; margin-bottom: 20px; }
+.why-card-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; margin-bottom: 12px; }
+.why-card-text { font-size: 13px; line-height: 1.8; color: var(--warm-gray); }
 
-  /* SECTION BASE */
-  section { padding: 120px 80px; }
-  .section-eyebrow {
-    font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
-    color: var(--gold); font-weight: 500; margin-bottom: 20px;
-    display: flex; align-items: center; gap: 12px;
-  }
-  .section-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(36px, 4vw, 64px); font-weight: 300; line-height: 1.1;
-    margin-bottom: 24px;
-  }
-  .section-title em { font-style: italic; color: var(--terracotta); }
+/* ONE STOP SHOP */
+.onestop-section { background: var(--ink); color: var(--cream); }
+.onestop-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+.onestop-left .section-title { color: var(--cream); }
+.onestop-left .section-eyebrow { color: var(--gold); }
+.onestop-left .section-eyebrow::before { background: var(--gold); }
+.onestop-tagline {
+font-family: 'Cormorant Garamond', serif;
+font-size: 22px; font-style: italic; font-weight: 300;
+color: var(--gold-light); line-height: 1.6; margin-bottom: 32px;
+}
+.onestop-left p {
+font-size: 16px; line-height: 1.9; color: rgba(245,239,228,0.65); margin-bottom: 40px;
+}
+.onestop-steps { display: flex; flex-direction: column; gap: 0; }
+.onestop-step {
+display: flex; align-items: flex-start; gap: 24px;
+padding: 24px 0; border-bottom: 1px solid rgba(201,168,76,0.15);
+transition: all 0.3s; cursor: default;
+}
+.onestop-step:first-child { border-top: 1px solid rgba(201,168,76,0.15); }
+.onestop-step:hover { padding-left: 8px; }
+.step-icon {
+width: 48px; height: 48px; flex-shrink: 0;
+background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25);
+display: flex; align-items: center; justify-content: center;
+font-size: 20px; transition: background 0.3s;
+}
+.onestop-step:hover .step-icon { background: rgba(201,168,76,0.2); }
+.step-title {
+font-family: 'Barlow Condensed', sans-serif; font-size: 17px;
+letter-spacing: 1px; font-weight: 600; text-transform: uppercase;
+color: var(--gold-light); margin-bottom: 6px;
+}
+.step-text { font-size: 13px; line-height: 1.7; color: rgba(245,239,228,0.55); }
 
-  /* WHY US */
-  .why-us { background: var(--sand); }
-  .why-grid {
-    display: grid; grid-template-columns: 1fr 1.4fr;
-    gap: 80px; align-items: center;
-  }
-  .why-left p {
-    font-size: 17px; line-height: 1.9; color: var(--warm-gray); margin-bottom: 40px;
-  }
-  .pillars { display: flex; flex-direction: column; gap: 0; }
-  .pillar {
-    display: flex; align-items: flex-start; gap: 24px;
-    padding: 28px 0; border-bottom: 1px solid var(--border);
-    transition: all 0.3s;
-  }
-  .pillar:first-child { border-top: 1px solid var(--border); }
-  .pillar:hover { padding-left: 8px; }
-  .pillar-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 42px; font-weight: 300; color: var(--border);
-    line-height: 1; min-width: 52px; transition: color 0.3s;
-  }
-  .pillar:hover .pillar-num { color: var(--gold); }
-  .pillar-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 18px; letter-spacing: 1px; font-weight: 600;
-    text-transform: uppercase; margin-bottom: 8px;
-  }
-  .pillar-text { font-size: 14px; line-height: 1.7; color: var(--warm-gray); }
+.onestop-right {
+display: flex; flex-direction: column; gap: 20px;
+}
+.onestop-highlight {
+background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.15);
+padding: 36px 32px; position: relative; overflow: hidden;
+transition: all 0.3s;
+}
+.onestop-highlight::before {
+content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0;
+background: var(--gold); transition: height 0.4s;
+}
+.onestop-highlight:hover::before { height: 100%; }
+.onestop-highlight:hover { background: rgba(255,255,255,0.07); }
+.oh-num {
+font-family: 'Cormorant Garamond', serif;
+font-size: 56px; font-weight: 300; color: rgba(201,168,76,0.2); line-height: 1; margin-bottom: 12px;
+}
+.oh-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: 24px; font-weight: 400; color: var(--cream); margin-bottom: 10px;
+}
+.oh-text { font-size: 13px; line-height: 1.8; color: rgba(245,239,228,0.5); }
 
-  .why-right {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
-  }
-  .why-card {
-    background: white; padding: 36px 28px;
-    border-bottom: 3px solid transparent;
-    transition: border-color 0.3s, transform 0.3s;
-    cursor: default;
-  }
-  .why-card:hover { border-color: var(--gold); transform: translateY(-4px); }
-  .why-card:nth-child(2) { margin-top: 40px; }
-  .why-card:nth-child(4) { margin-top: -40px; }
-  .why-icon { font-size: 32px; margin-bottom: 20px; }
-  .why-card-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px; font-weight: 400; margin-bottom: 12px;
-  }
-  .why-card-text { font-size: 13px; line-height: 1.8; color: var(--warm-gray); }
+/* REVIEWS */
+.testimonials-section { background: var(--cream); }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
+.review-card {
+background: var(--sand); padding: 36px 32px;
+position: relative; transition: transform 0.3s, border-color 0.3s;
+border-bottom: 3px solid transparent;
+}
+.review-card:hover { transform: translateY(-8px); border-color: var(--gold); }
+.review-stars { color: var(--gold); font-size: 16px; letter-spacing: 2px; margin-bottom: 20px; }
+.review-text {
+font-family: 'Cormorant Garamond', serif; font-size: 18px;
+font-style: italic; font-weight: 300; line-height: 1.7; color: var(--ink); margin-bottom: 24px;
+}
+.review-author { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--warm-gray); }
+.review-location { font-size: 11px; color: var(--gold); margin-top: 4px; }
+.review-badge {
+position: absolute; top: -1px; right: 28px;
+background: var(--gold); padding: 6px 16px;
+font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+color: var(--ink); font-weight: 600;
+}
+.reviews-total {
+text-align: center; margin-top: 64px; padding-top: 56px; border-top: 1px solid var(--border);
+}
+.reviews-total-num {
+font-family: 'Cormorant Garamond', serif;
+font-size: 80px; font-weight: 300; color: var(--ink); line-height: 1;
+}
+.reviews-total-num span { color: var(--gold); }
+.reviews-total-label {
+font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+color: var(--warm-gray); margin-top: 14px;
+}
+.reviews-stars-row { display: flex; justify-content: center; gap: 6px; margin-top: 18px; font-size: 34px; color: var(--gold); }
 
-  /* TESTIMONIALS */
-  .testimonials-section { background: var(--sand); }
-  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 60px; }
-  .review-card {
-    background: white; padding: 36px 32px;
-    position: relative; transition: transform 0.3s;
-  }
-  .review-card:hover { transform: translateY(-8px); }
-  .review-stars { color: var(--gold); font-size: 16px; letter-spacing: 2px; margin-bottom: 20px; }
-  .review-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px; font-style: italic; font-weight: 300;
-    line-height: 1.7; color: var(--ink); margin-bottom: 24px;
-  }
-  .review-author { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--warm-gray); }
-  .review-location { font-size: 11px; color: var(--gold); margin-top: 4px; }
-  .review-badge {
-    position: absolute; top: -1px; right: 32px;
-    background: var(--gold); padding: 6px 16px;
-    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--ink); font-weight: 600;
-  }
+/* LOCATIONS */
+.locations-section { background: var(--ocean); color: var(--cream); padding: 120px 80px; }
+.locations-inner { display: flex; gap: 80px; align-items: flex-start; }
+.locations-left { flex: 1; }
+.locations-left .section-title { color: var(--cream); }
+.locations-left .section-eyebrow { color: var(--gold-light); }
+.locations-left .section-eyebrow::before { background: var(--gold-light); }
+.locations-left > p { font-size: 16px; line-height: 1.9; color: rgba(245,239,228,0.7); margin-bottom: 48px; }
 
-  /* LOCATIONS */
-  .locations-section { background: var(--ocean); color: var(--cream); padding: 80px; }
-  .locations-inner { display: flex; gap: 80px; align-items: center; }
-  .locations-left { flex: 1; }
-  .locations-left .section-title { color: var(--cream); }
-  .locations-left .section-eyebrow { color: var(--gold-light); }
-  .locations-left .section-eyebrow::before { background: var(--gold-light); }
-  .locations-left p { font-size: 16px; line-height: 1.9; color: rgba(245,239,228,0.7); margin-bottom: 40px; }
-  .location-list { display: flex; flex-wrap: wrap; gap: 12px; }
-  .location-pill {
-    border: 1px solid rgba(201,168,76,0.4); padding: 10px 24px;
-    font-size: 13px; letter-spacing: 1px; color: var(--gold-light);
-    transition: all 0.3s;
-  }
-  .location-pill:hover { background: rgba(201,168,76,0.15); }
+.region-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.region-card {
+background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.2);
+padding: 36px 28px; transition: all 0.3s;
+}
+.region-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(201,168,76,0.4); }
+.region-name {
+font-family: 'Cormorant Garamond', serif;
+font-size: 28px; font-weight: 300; color: var(--cream);
+margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(201,168,76,0.2);
+}
+.region-name span { color: var(--gold); }
+.region-desc { font-size: 14px; line-height: 1.8; color: rgba(245,239,228,0.6); }
+.region-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.region-tag {
+font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+border: 1px solid rgba(201,168,76,0.3); color: var(--gold-light);
+padding: 5px 14px; font-weight: 500;
+}
 
-  .locations-right { flex: 0 0 380px; }
-  .cta-box {
-    background: var(--gold); padding: 52px 44px;
-  }
-  .cta-box-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 36px; font-weight: 300; color: var(--ink);
-    line-height: 1.2; margin-bottom: 20px;
-  }
-  .cta-box p { font-size: 14px; line-height: 1.8; color: rgba(26,23,20,0.7); margin-bottom: 32px; }
-  .cta-input {
-    width: 100%; padding: 14px 16px; border: none; background: white;
-    font-family: 'Barlow', sans-serif; font-size: 14px; margin-bottom: 12px;
-    outline: none;
-  }
-  .cta-submit {
-    width: 100%; padding: 16px; background: var(--ink); color: var(--cream);
-    border: none; font-family: 'Barlow', sans-serif;
-    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
-    font-weight: 600; cursor: pointer; transition: background 0.3s;
-  }
-  .cta-submit:hover { background: var(--ocean); }
+.locations-right { flex: 0 0 380px; }
+.cta-box { background: var(--gold); padding: 52px 44px; }
+.cta-box-icon { margin-bottom: 20px; }
+.cta-box-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: 34px; font-weight: 300; color: var(--ink); line-height: 1.2; margin-bottom: 16px;
+}
+.cta-box p { font-size: 14px; line-height: 1.8; color: rgba(26,23,20,0.7); margin-bottom: 32px; }
+.cta-input {
+width: 100%; padding: 14px 16px; border: none; background: white;
+font-family: 'Barlow', sans-serif; font-size: 14px; margin-bottom: 12px; outline: none;
+}
+.cta-submit {
+width: 100%; padding: 16px; background: var(--ink); color: var(--cream);
+border: none; font-family: 'Barlow', sans-serif; font-size: 12px;
+letter-spacing: 2px; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: background 0.3s;
+}
+.cta-submit:hover { background: var(--ocean); }
 
-  /* FOOTER */
-  footer {
-    background: var(--ink); padding: 60px 80px 40px;
-    border-top: 1px solid rgba(201,168,76,0.2);
-  }
-  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 60px; }
-  .footer-brand .nav-logo { font-size: 28px; }
-  .footer-brand p { font-size: 13px; color: rgba(245,239,228,0.4); margin-top: 12px; max-width: 280px; line-height: 1.7; }
-  .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-  .footer-col-title {
-    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 20px; font-weight: 600;
-  }
-  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-  .footer-col ul a {
-    font-size: 13px; color: rgba(245,239,228,0.5); text-decoration: none;
-    transition: color 0.3s; letter-spacing: 0.5px;
-  }
-  .footer-col ul a:hover { color: var(--gold); }
-  .footer-bottom {
-    padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08);
-    display: flex; justify-content: space-between; align-items: center;
-  }
-  .footer-bottom p { font-size: 12px; color: rgba(245,239,228,0.25); letter-spacing: 1px; }
-  .social-icons { display: flex; gap: 16px; }
-  .social-icon {
-    width: 36px; height: 36px; border: 1px solid rgba(201,168,76,0.3);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--gold); font-size: 14px; text-decoration: none;
-    transition: all 0.3s;
-  }
-  .social-icon:hover { background: var(--gold); color: var(--ink); }
+/* FOOTER */
+footer { background: var(--ink); padding: 60px 80px 40px; border-top: 1px solid rgba(201,168,76,0.2); }
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 52px; }
+.footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.footer-logo-text {
+font-family: 'Cormorant Garamond', serif; font-size: 24px;
+letter-spacing: 3px; font-weight: 600; color: var(--cream); text-transform: uppercase;
+}
+.footer-logo-text span { color: var(--gold); }
+.footer-brand p { font-size: 13px; color: rgba(245,239,228,0.4); max-width: 300px; line-height: 1.7; }
+.footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.footer-col-title { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-weight: 600; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-col ul a { font-size: 13px; color: rgba(245,239,228,0.5); text-decoration: none; transition: color 0.3s; }
+.footer-col ul a:hover { color: var(--gold); }
+.footer-bottom {
+padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08);
+display: flex; justify-content: space-between; align-items: center;
+}
+.footer-bottom p { font-size: 12px; color: rgba(245,239,228,0.25); letter-spacing: 1px; }
 
-  /* ANIMATIONS */
-  .fade-up {
-    opacity: 0; transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
+/* ANIMATIONS */
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
 
-  @media (max-width: 1024px) {
-    nav { padding: 20px 32px; }
-    .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; }
-    .hero-right { min-height: 50vh; }
-    .hero-left { padding: 60px 40px; }
-    section { padding: 80px 32px; }
-    .why-grid { grid-template-columns: 1fr; }
-    .platform-grid { grid-template-columns: 1fr; }
-    .reviews-grid { grid-template-columns: 1fr; }
-    .locations-inner { flex-direction: column; }
-    .locations-right { width: 100%; }
-    .hooks-grid { grid-template-columns: 1fr; }
-    .cal-grid { grid-template-columns: repeat(3, 1fr); }
-    footer { padding: 60px 32px 40px; }
-    .footer-top { flex-direction: column; gap: 40px; }
-  }
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+nav { padding: 18px 28px; }
+.nav-links { display: none; }
+.hero { grid-template-columns: 1fr; }
+.hero-right { min-height: 55vh; }
+.hero-left { padding: 60px 32px; }
+section { padding: 80px 32px; }
+.why-grid, .onestop-inner, .locations-inner { grid-template-columns: 1fr; flex-direction: column; gap: 48px; }
+.why-right { grid-template-columns: 1fr; }
+.why-card:nth-child(2), .why-card:nth-child(4) { margin-top: 0; }
+.reviews-grid { grid-template-columns: 1fr; }
+.region-grid { grid-template-columns: 1fr; }
+.locations-section { padding: 80px 32px; }
+.locations-right { width: 100%; flex: none; }
+footer { padding: 60px 32px 40px; }
+.footer-top { flex-direction: column; gap: 40px; }
+.floating-card { display: none; }
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">SoCal<span>Keys</span></div>
-  <ul class="nav-links">
-    <li><a href="#why">Why Us</a></li>
-    <li><a href="#strategy">Strategy</a></li>
-    <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#locations">Locations</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">List Your Property</a>
+<a href="#" class="nav-logo">
+<svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="35" cy="40" r="22" stroke="#C9A84C" stroke-width="7" fill="none"/>
+<circle cx="35" cy="40" r="11" stroke="#C9A84C" stroke-width="4" fill="none"/>
+<rect x="53" y="37" width="40" height="7" rx="3.5" fill="#C9A84C"/>
+<rect x="74" y="44" width="7" height="11" rx="2.5" fill="#C9A84C"/>
+<rect x="84" y="44" width="7" height="8" rx="2.5" fill="#C9A84C"/>
+<rect x="63" y="44" width="7" height="14" rx="2.5" fill="#C9A84C"/>
+<circle cx="28" cy="33" r="3.5" fill="#E8C96D" opacity="0.65"/>
+</svg>
+<div class="nav-logo-text">SoCal<span>Keys</span></div>
+</a>
+<ul class="nav-links">
+<li><a href="#why">Why Us</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#locations">Locations</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<a href="#contact" class="nav-cta">List Your Property</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-eyebrow">Southern California's Elite STR Managers</div>
-    <h1 class="hero-h1">Your Property.<br><em>Perfected.</em><br>Profitable.</h1>
-    <p class="hero-sub">We don't just manage properties — we engineer extraordinary guest experiences that drive 5-star reviews, maximum occupancy, and premium nightly rates across Southern California.</p>
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num">125<span>+</span></div>
-        <div class="stat-label">5-Star Reviews</div>
-      </div>
-      <div>
-        <div class="stat-num">5<span>yr</span></div>
-        <div class="stat-label">Proven Track Record</div>
-      </div>
-      <div>
-        <div class="stat-num">100<span>%</span></div>
-        <div class="stat-label">5-Star Rating</div>
-      </div>
-    </div>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-primary">List Your Property</a>
-      <a href="#why" class="btn-outline">See Our Difference</a>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-bg-pattern"></div>
-    <div class="hero-img-overlay"></div>
-    <div class="floating-card card-1">
-      <div class="fc-label">This Month's Avg</div>
-      <div class="fc-value">$<span>480</span></div>
-      <div class="fc-sub">Per night, Newport Beach</div>
-    </div>
-    <div class="floating-card card-2">
-      <div class="fc-label">Occupancy Rate</div>
-      <div class="fc-value">94<span>%</span></div>
-      <div class="fc-sub">Peak season average</div>
-    </div>
-    <div class="hero-right-content">
-      <div class="hero-location-badge">
-        <span>📍 Newport Beach → Entertainment Districts</span>
-      </div>
-      <div class="hero-quote">"Hands-down the best property management experience we've ever had."</div>
-      <div class="hero-stars">
-        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-      </div>
-      <div class="hero-review-meta">Verified Guest Review · One of 125+</div>
-    </div>
-  </div>
+<div class="hero-left">
+<div class="hero-eyebrow">Orange County &amp; San Diego's Elite STR Management</div>
+<h1 class="hero-h1">Your Property.<br><em>Perfected.</em><br>Profitable.</h1>
+<p class="hero-sub">From finding the right property to designing, furnishing, and managing it — SoCal Keys is your complete partner in building a thriving short-term rental investment in Southern California.</p>
+<div class="hero-stats">
+<div>
+<div class="stat-num">143<span>+</span></div>
+<div class="stat-label">5-Star Reviews</div>
+</div>
+<div>
+<div class="stat-num">5<span>yr</span></div>
+<div class="stat-label">Track Record</div>
+</div>
+<div>
+<div class="stat-num">100<span>%</span></div>
+<div class="stat-label">5-Star Rating</div>
+</div>
+</div>
+<div class="hero-btns">
+<a href="#contact" class="btn-primary">Get Started Today</a>
+<a href="#services" class="btn-outline">Our Services</a>
+</div>
+</div>
+
+<div class="hero-right">
+<div class="hero-bg-pattern"></div>
+<div class="hero-img-overlay"></div>
+<svg class="hero-key-watermark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="35" cy="40" r="22" stroke="white" stroke-width="5" fill="none"/>
+<circle cx="35" cy="40" r="11" stroke="white" stroke-width="3" fill="none"/>
+<rect x="53" y="37" width="40" height="7" rx="3.5" fill="white"/>
+<rect x="74" y="44" width="7" height="11" rx="2.5" fill="white"/>
+<rect x="84" y="44" width="7" height="8" rx="2.5" fill="white"/>
+<rect x="63" y="44" width="7" height="14" rx="2.5" fill="white"/>
+</svg>
+<div class="floating-card card-1">
+<div class="fc-label">Avg Nightly Rate</div>
+<div class="fc-value">$<span>480</span></div>
+<div class="fc-sub">OC coastal properties</div>
+</div>
+<div class="floating-card card-2">
+<div class="fc-label">Occupancy Rate</div>
+<div class="fc-value">94<span>%</span></div>
+<div class="fc-sub">Peak season avg</div>
+</div>
+<div class="hero-right-content">
+<div class="hero-location-badge">
+<span>📍 Orange County &amp; San Diego</span>
+</div>
+<div class="hero-quote">"From day one they handled everything — it's truly a one-stop experience unlike anything else."</div>
+<div class="hero-stars">
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>
+<div class="hero-review-meta">Verified Property Owner · One of 143 Five-Star Reviews</div>
+</div>
+</div>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee-strip">
-  <div class="marquee-track">
-    <div class="marquee-item">125+ Five-Star Reviews</div>
-    <div class="marquee-item">Newport Beach</div>
-    <div class="marquee-item">5 Years of Excellence</div>
-    <div class="marquee-item">Now Accepting New Properties</div>
-    <div class="marquee-item">100% Five-Star Rating</div>
-    <div class="marquee-item">Hands-On Management</div>
-    <div class="marquee-item">Southern California's Finest</div>
-    <div class="marquee-item">Entertainment Districts</div>
-    <!-- Duplicate for seamless loop -->
-    <div class="marquee-item">125+ Five-Star Reviews</div>
-    <div class="marquee-item">Newport Beach</div>
-    <div class="marquee-item">5 Years of Excellence</div>
-    <div class="marquee-item">Now Accepting New Properties</div>
-    <div class="marquee-item">100% Five-Star Rating</div>
-    <div class="marquee-item">Hands-On Management</div>
-    <div class="marquee-item">Southern California's Finest</div>
-    <div class="marquee-item">Entertainment Districts</div>
-  </div>
+<div class="marquee-track">
+<div class="marquee-item">143 Five-Star Reviews</div>
+<div class="marquee-item">Orange County</div>
+<div class="marquee-item">San Diego</div>
+<div class="marquee-item">5 Years of Excellence</div>
+<div class="marquee-item">Now Accepting New Properties</div>
+<div class="marquee-item">100% Five-Star Rating</div>
+<div class="marquee-item">Full Service — Start to Finish</div>
+<div class="marquee-item">Your One-Stop STR Partner</div>
+<div class="marquee-item">143 Five-Star Reviews</div>
+<div class="marquee-item">Orange County</div>
+<div class="marquee-item">San Diego</div>
+<div class="marquee-item">5 Years of Excellence</div>
+<div class="marquee-item">Now Accepting New Properties</div>
+<div class="marquee-item">100% Five-Star Rating</div>
+<div class="marquee-item">Full Service — Start to Finish</div>
+<div class="marquee-item">Your One-Stop STR Partner</div>
+</div>
 </div>
 
 <!-- WHY US -->
 <section class="why-us" id="why">
-  <div class="why-grid">
-    <div class="why-left fade-up">
-      <div class="section-eyebrow">What Sets Us Apart</div>
-      <h2 class="section-title">The SoCal Keys <em>Difference</em></h2>
-      <p>Most property managers send a cleaner and call it a day. We personally walk every property before every guest checks in — because your 5-star reputation depends on it. And ours does too.</p>
-      <div class="pillars">
-        <div class="pillar">
-          <div class="pillar-num">01</div>
-          <div>
-            <div class="pillar-title">White-Glove Walk-Throughs</div>
-            <div class="pillar-text">We personally inspect every property before check-in. No shortcuts, no checklist proxies — just hands-on excellence that guests notice and rave about.</div>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-num">02</div>
-          <div>
-            <div class="pillar-title">Revenue Engineering</div>
-            <div class="pillar-text">Dynamic pricing strategies, peak-season optimization, and demand-based rate adjustments that consistently outperform the local market average.</div>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-num">03</div>
-          <div>
-            <div class="pillar-title">Proven 5-Star System</div>
-            <div class="pillar-text">125+ reviews. Every single one a 5-star. This isn't luck — it's our repeatable process for creating unforgettable guest experiences.</div>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-num">04</div>
-          <div>
-            <div class="pillar-title">5 Years, Zero Compromises</div>
-            <div class="pillar-text">Half a decade managing SoCal's finest short-term rentals. Our experience means fewer surprises, faster solutions, and higher returns for you.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="why-right fade-up">
-      <div class="why-card">
-        <div class="why-icon">🏡</div>
-        <div class="why-card-title">Property Staging & Photography</div>
-        <div class="why-card-text">We ensure your listing stands out with professional styling guidance that converts browsers into bookers at premium rates.</div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">📱</div>
-        <div class="why-card-title">24/7 Guest Communication</div>
-        <div class="why-card-text">Every message answered promptly and professionally. Guests feel cared for. Owners never get woken up at midnight.</div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">📊</div>
-        <div class="why-card-title">Transparent Owner Reporting</div>
-        <div class="why-card-text">Real-time dashboards showing occupancy, revenue, and upcoming bookings. You always know exactly what's happening with your asset.</div>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🔑</div>
-        <div class="why-card-title">Now Accepting New Properties</div>
-        <div class="why-card-text">Our books are open. We're selective — we only take on properties we can manage at the same elite standard our reputation demands.</div>
-      </div>
-    </div>
-  </div>
+<div class="why-grid">
+<div class="why-left fade-up">
+<div class="section-eyebrow">What Sets Us Apart</div>
+<h2 class="section-title">The SoCal Keys <em>Difference</em></h2>
+<p>Most property managers send a cleaner and call it a day. We personally walk every property before every guest checks in — because your 5-star reputation depends on it. And ours does too.</p>
+<div class="pillars">
+<div class="pillar">
+<div class="pillar-num">01</div>
+<div>
+<div class="pillar-title">White-Glove Walk-Throughs</div>
+<div class="pillar-text">We personally inspect every property before check-in. No shortcuts, no checklist proxies — just hands-on excellence that guests notice and rave about.</div>
+</div>
+</div>
+<div class="pillar">
+<div class="pillar-num">02</div>
+<div>
+<div class="pillar-title">Revenue Optimization</div>
+<div class="pillar-text">Dynamic pricing strategies, peak-season planning, and demand-based rate adjustments that consistently outperform the local OC and San Diego market.</div>
+</div>
+</div>
+<div class="pillar">
+<div class="pillar-num">03</div>
+<div>
+<div class="pillar-title">Proven 5-Star System</div>
+<div class="pillar-text">143 reviews. Every single one a 5-star. This isn't luck — it's our repeatable process for creating unforgettable guest experiences, every single stay.</div>
+</div>
+</div>
+<div class="pillar">
+<div class="pillar-num">04</div>
+<div>
+<div class="pillar-title">5 Years, Zero Compromises</div>
+<div class="pillar-text">Half a decade managing Southern California's finest short-term rentals. Our experience means fewer surprises, faster solutions, and higher returns for you.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="why-right fade-up">
+<div class="why-card">
+<div class="why-icon">🏡</div>
+<div class="why-card-title">Property Staging & Presentation</div>
+<div class="why-card-text">We ensure your listing stands out with professional styling that converts browsers into bookers at premium nightly rates.</div>
+</div>
+<div class="why-card">
+<div class="why-icon">📱</div>
+<div class="why-card-title">24/7 Guest Communication</div>
+<div class="why-card-text">Every message answered promptly and professionally. Guests feel cared for. You never get woken up at midnight.</div>
+</div>
+<div class="why-card">
+<div class="why-icon">📊</div>
+<div class="why-card-title">Transparent Owner Reporting</div>
+<div class="why-card-text">Real-time visibility into occupancy, revenue, and upcoming bookings. You always know exactly what's happening with your investment.</div>
+</div>
+<div class="why-card">
+<div class="why-icon">🔑</div>
+<div class="why-card-title">Now Accepting New Properties</div>
+<div class="why-card-text">Our books are open. We're selective — we only take on properties we can manage at the same elite standard our reputation demands.</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ONE STOP SHOP -->
+<section class="onestop-section" id="services">
+<div class="onestop-inner">
+<div class="onestop-left fade-up">
+<div class="section-eyebrow">Full-Service Ownership</div>
+<h2 class="section-title" style="color:var(--cream);">Your Complete <em style="color:var(--gold-light);">STR Partner</em></h2>
+<div class="onestop-tagline">"From the first key to the first five-star review — and everything in between."</div>
+<p>Most people dream of owning a profitable short-term rental but don't know where to begin. SoCal Keys eliminates every obstacle. We are the only partner you will ever need — guiding you through every single step of the journey, from identifying the perfect property to handing you a fully operational, revenue-generating investment that practically runs itself.</p>
+<div class="onestop-steps">
+<div class="onestop-step">
+<div class="step-icon">🏠</div>
+<div>
+<div class="step-title">Find the Right Property</div>
+<div class="step-text">We leverage our deep local knowledge of the OC and San Diego markets to help you identify high-performing STR opportunities with the best return potential.</div>
+</div>
+</div>
+<div class="onestop-step">
+<div class="step-icon">✏️</div>
+<div>
+<div class="step-title">Design with Purpose</div>
+<div class="step-text">We craft interior concepts that photograph beautifully, feel luxurious to guests, and are built to withstand the demands of a high-occupancy rental.</div>
+</div>
+</div>
+<div class="onestop-step">
+<div class="step-icon">🔨</div>
+<div>
+<div class="step-title">Renovate to Perform</div>
+<div class="step-text">We oversee every renovation with an investor's eye — maximizing guest appeal and nightly rate potential while keeping costs strategic and returns high.</div>
+</div>
+</div>
+<div class="onestop-step">
+<div class="step-icon">🛋️</div>
+<div>
+<div class="step-title">Furnish to Impress</div>
+<div class="step-text">Every piece, every detail, every touch point selected to wow guests and earn 5-star reviews from night one. We set the stage for your success.</div>
+</div>
+</div>
+<div class="onestop-step">
+<div class="step-icon">⭐</div>
+<div>
+<div class="step-title">Manage to Perfection</div>
+<div class="step-text">Then we run it all for you — maximizing revenue, delivering flawless guest experiences, and protecting your investment every single day.</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="onestop-right fade-up">
+<div class="onestop-highlight">
+<div class="oh-num">01</div>
+<div class="oh-title">No Experience Needed</div>
+<div class="oh-text">You don't need to know anything about short-term rentals. We do. Our team handles every complexity so you can focus on enjoying the returns.</div>
+</div>
+<div class="onestop-highlight">
+<div class="oh-num">02</div>
+<div class="oh-title">One Team, Zero Gaps</div>
+<div class="oh-text">No juggling contractors, designers, and managers separately. SoCal Keys is a single, seamless operation with one point of contact and one shared goal — your success.</div>
+</div>
+<div class="onestop-highlight">
+<div class="oh-num">03</div>
+<div class="oh-title">Built for Maximum Returns</div>
+<div class="oh-text">Every decision we make — from paint colors to pricing strategy — is engineered to drive higher nightly rates, better reviews, and stronger long-term asset value.</div>
+</div>
+<div class="onestop-highlight" style="background: rgba(201,168,76,0.08); border-color: rgba(201,168,76,0.35);">
+<div style="font-family:'Cormorant Garamond',serif; font-size:28px; font-style:italic; font-weight:300; color:var(--gold-light); line-height:1.5; margin-bottom:16px;">"We don't just manage properties. We build income-generating assets — from the ground up."</div>
+<div style="font-size:11px; letter-spacing:2px; text-transform:uppercase; color:rgba(245,239,228,0.4);">— The SoCal Keys Promise</div>
+</div>
+</div>
+</div>
 </section>
 
 <!-- REVIEWS -->
 <section class="testimonials-section" id="reviews">
-  <div style="text-align:center">
-    <div class="section-eyebrow" style="justify-content:center; text-align:center">What People Are Saying</div>
-    <h2 class="section-title">125+ Reviews. <em>Zero Exceptions.</em></h2>
-    <p style="color:var(--warm-gray); max-width:520px; margin:0 auto 16px; line-height:1.8;">Every review we've ever received has been 5 stars. Not most of them. All of them. Here's why that matters for your property.</p>
-  </div>
-  <div class="reviews-grid">
-    <div class="review-card fade-up">
-      <div class="review-badge">Verified</div>
-      <div class="review-stars">★★★★★</div>
-      <div class="review-text">"The property was immaculate — you could tell someone had personally checked every detail before we arrived. This was our 4th stay and it gets better every time."</div>
-      <div class="review-author">The Martinez Family</div>
-      <div class="review-location">Newport Beach Property</div>
-    </div>
-    <div class="review-card fade-up" style="transform:translateY(20px)">
-      <div class="review-badge">Verified</div>
-      <div class="review-stars">★★★★★</div>
-      <div class="review-text">"As a property owner, I was nervous to hand over my home. Six months later, I have zero complaints and significantly higher revenue than I was getting before. They deliver."</div>
-      <div class="review-author">Property Owner, J.R.</div>
-      <div class="review-location">Entertainment District Home</div>
-    </div>
-    <div class="review-card fade-up">
-      <div class="review-badge">Verified</div>
-      <div class="review-stars">★★★★★</div>
-      <div class="review-text">"Communication was instant, the property was perfect, and the local recommendations they included made our trip. This is what luxury hospitality looks like."</div>
-      <div class="review-author">Sarah & Michael T.</div>
-      <div class="review-location">Southern California Getaway</div>
-    </div>
-  </div>
-  <div style="text-align:center; margin-top:48px;">
-    <p style="font-size:13px; color:var(--warm-gray); letter-spacing:2px; text-transform:uppercase;">125+ five-star reviews across Airbnb, VRBO & Google</p>
-    <div style="display:flex; justify-content:center; gap:4px; margin-top:12px; font-size:28px; color:var(--gold);">★★★★★</div>
-  </div>
+<div style="text-align:center">
+<div class="section-eyebrow" style="justify-content:center;">What People Are Saying</div>
+<h2 class="section-title">143 Reviews. <em>Zero Exceptions.</em></h2>
+<p style="color:var(--warm-gray); max-width:520px; margin:0 auto; line-height:1.8; font-size:16px;">Every review we have ever received has been 5 stars. Not most of them — all of them.</p>
+</div>
+<div class="reviews-grid">
+<div class="review-card fade-up">
+<div class="review-badge">Verified</div>
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"The property was immaculate — you could tell someone had personally checked every detail before we arrived. This was our fourth stay and it keeps getting better every time."</div>
+<div class="review-author">The Martinez Family</div>
+<div class="review-location">Orange County</div>
+</div>
+<div class="review-card fade-up" style="margin-top:28px;">
+<div class="review-badge">Verified</div>
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Communication was instant, the home was spotless, and the local recommendations they included made our entire trip. This is what luxury hospitality actually looks like."</div>
+<div class="review-author">Sarah & Michael T.</div>
+<div class="review-location">San Diego</div>
+</div>
+<div class="review-card fade-up">
+<div class="review-badge">Verified</div>
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Best short-term rental experience we've ever had — and we travel constantly. Everything was perfect from check-in to check-out. We will absolutely be back."</div>
+<div class="review-author">The Johnson Group</div>
+<div class="review-location">Orange County</div>
+</div>
+</div>
+<div class="reviews-total fade-up">
+<div class="reviews-total-num">143<span>★</span></div>
+<div class="reviews-total-label">Five-Star Reviews Across Airbnb & VRBO — Every Single One</div>
+<div class="reviews-stars-row">★★★★★</div>
+</div>
 </section>
 
 <!-- LOCATIONS & CTA -->
 <section class="locations-section" id="locations">
-  <div class="locations-inner">
-    <div class="locations-left fade-up">
-      <div class="section-eyebrow">Where We Operate</div>
-      <h2 class="section-title">From the Coast to the <em style="color:var(--gold-light);">Attractions</em></h2>
-      <p>We manage elite short-term rental properties across Southern California's most sought-after destinations — from Newport Beach's oceanfront homes to properties near SoCal's world-famous entertainment destinations.</p>
-      <div class="location-list">
-        <span class="location-pill">Newport Beach</span>
-        <span class="location-pill">Anaheim / Disneyland Area</span>
-        <span class="location-pill">Del Mar</span>
-        <span class="location-pill">San Diego</span>
-        <span class="location-pill">Long Beach</span>
-        <span class="location-pill">Orange County</span>
-        <span class="location-pill">LA Entertainment Districts</span>
-        <span class="location-pill">Laguna Beach</span>
-      </div>
-    </div>
-    <div class="locations-right">
-      <div class="cta-box" id="contact">
-        <div class="cta-box-title">Ready to Let Your Property Work For You?</div>
-        <p>We're currently accepting select new properties. If you own a home in Southern California and want 5-star management that actually delivers results, let's talk.</p>
-        <input class="cta-input" type="text" placeholder="Your Name">
-        <input class="cta-input" type="text" placeholder="Property Address or Area">
-        <input class="cta-input" type="text" placeholder="Phone or Email">
-        <button class="cta-submit">Request a Free Consultation →</button>
-      </div>
-    </div>
-  </div>
+<div class="locations-inner">
+<div class="locations-left fade-up">
+<div class="section-eyebrow">Where We Operate</div>
+<h2 class="section-title" style="color:var(--cream);">Two Premier <em style="color:var(--gold-light);">Markets</em></h2>
+<p>We proudly serve Orange County and San Diego — two of California's most in-demand short-term rental markets. From world-class coastlines to major entertainment destinations, our properties sit where guests most want to be.</p>
+
+<div class="region-grid">
+<div class="region-card">
+<div class="region-name">Orange <span>County</span></div>
+<div class="region-desc">From iconic coastal communities to properties near world-famous theme parks and entertainment destinations, Orange County offers exceptional STR demand year-round.</div>
+<div class="region-tags">
+<span class="region-tag">Coastal Beaches</span>
+<span class="region-tag">Theme Parks</span>
+<span class="region-tag">Luxury Retreats</span>
+<span class="region-tag">Year-Round Demand</span>
+</div>
+</div>
+<div class="region-card">
+<div class="region-name">San <span>Diego</span></div>
+<div class="region-desc">America's Finest City draws visitors 365 days a year — perfect weather, stunning beaches, vibrant nightlife, and top attractions make it one of the nation's strongest STR markets.</div>
+<div class="region-tags">
+<span class="region-tag">Beach Communities</span>
+<span class="region-tag">Attractions</span>
+<span class="region-tag">Coastal Living</span>
+<span class="region-tag">High Occupancy</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="locations-right" id="contact">
+<div class="cta-box">
+<div class="cta-box-icon">
+<svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="35" cy="40" r="22" stroke="#1A1714" stroke-width="7" fill="none"/>
+<circle cx="35" cy="40" r="11" stroke="#1A1714" stroke-width="4" fill="none"/>
+<rect x="53" y="37" width="40" height="7" rx="3.5" fill="#1A1714"/>
+<rect x="74" y="44" width="7" height="11" rx="2.5" fill="#1A1714"/>
+<rect x="84" y="44" width="7" height="8" rx="2.5" fill="#1A1714"/>
+<rect x="63" y="44" width="7" height="14" rx="2.5" fill="#1A1714"/>
+</svg>
+</div>
+<div class="cta-box-title">Let's Build Something Extraordinary Together</div>
+<p>Whether you already own a property or are just starting your STR journey, we're ready to guide you every step of the way. Reach out and let's talk.</p>
+<input class="cta-input" type="text" placeholder="Your Name">
+<input class="cta-input" type="text" placeholder="Property Address or General Area">
+<input class="cta-input" type="text" placeholder="Phone or Email">
+<button class="cta-submit">Request a Free Consultation →</button>
+</div>
+</div>
+</div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="nav-logo">SoCal<span style="color:var(--gold)">Keys</span></div>
-      <p>Southern California's premier boutique short-term rental management company. Five years. 125+ reviews. Zero compromises.</p>
-    </div>
-    <div class="footer-links">
-      <div class="footer-col">
-        <div class="footer-col-title">Services</div>
-        <ul>
-          <li><a href="#">Full Property Management</a></li>
-          <li><a href="#">Listing Optimization</a></li>
-          <li><a href="#">Revenue Management</a></li>
-          <li><a href="#">Guest Experience</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Connect</div>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">TikTok</a></li>
-          <li><a href="#">YouTube</a></li>
-          <li><a href="#">Facebook</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2025 SoCal Keys. All rights reserved. Southern California's Elite STR Management.</p>
-    <div class="social-icons">
-      <a href="#" class="social-icon">▶</a>
-      <a href="#" class="social-icon">◈</a>
-      <a href="#" class="social-icon">⊕</a>
-      <a href="#" class="social-icon">in</a>
-    </div>
-  </div>
+<div class="footer-top">
+<div class="footer-brand">
+<div class="footer-logo">
+<svg width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="35" cy="40" r="22" stroke="#C9A84C" stroke-width="7" fill="none"/>
+<circle cx="35" cy="40" r="11" stroke="#C9A84C" stroke-width="4" fill="none"/>
+<rect x="53" y="37" width="40" height="7" rx="3.5" fill="#C9A84C"/>
+<rect x="74" y="44" width="7" height="11" rx="2.5" fill="#C9A84C"/>
+<rect x="84" y="44" width="7" height="8" rx="2.5" fill="#C9A84C"/>
+<rect x="63" y="44" width="7" height="14" rx="2.5" fill="#C9A84C"/>
+<circle cx="28" cy="33" r="3.5" fill="#E8C96D" opacity="0.65"/>
+</svg>
+<div class="footer-logo-text">SoCal<span>Keys</span></div>
+</div>
+<p>Southern California's premier full-service short-term rental company. We purchase, design, renovate, furnish, and manage — so you don't have to.</p>
+</div>
+<div class="footer-links">
+<div class="footer-col">
+<div class="footer-col-title">Services</div>
+<ul>
+<li><a href="#services">Property Acquisition</a></li>
+<li><a href="#services">Design & Renovation</a></li>
+<li><a href="#services">Furnishing</a></li>
+<li><a href="#services">Full Management</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<div class="footer-col-title">Company</div>
+<ul>
+<li><a href="#why">Why SoCal Keys</a></li>
+<li><a href="#reviews">Reviews</a></li>
+<li><a href="#locations">Locations</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2025 SoCal Keys. All rights reserved. Orange County & San Diego's Elite Short Term Rental Management.</p>
+<p style="color:rgba(245,239,228,0.25); font-size:12px; letter-spacing:1px;">143 ★ Five-Star Reviews</p>
+</div>
 </footer>
 
 <script>
-  // Scroll animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) entry.target.classList.add('visible');
+});
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // Stagger children
-  document.querySelectorAll('.pillar, .why-card, .review-card, .hook-card').forEach((el, i) => {
-    el.style.transitionDelay = `${(i % 4) * 0.12}s`;
-  });
-
-  // Number counter animation
-  function animateCounter(el, target, suffix = '') {
-    let current = 0;
-    const increment = target / 60;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      el.textContent = Math.floor(current) + suffix;
-    }, 20);
-  }
-
-  const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const nums = entry.target.querySelectorAll('.stat-num');
-        if (nums[0]) animateCounter(nums[0].childNodes[0], 125, '');
-        statsObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  const statsEl = document.querySelector('.hero-stats');
-  if (statsEl) statsObserver.observe(statsEl);
+document.querySelectorAll('.pillar').forEach((el, i) => { el.style.transitionDelay = `${i * 0.1}s`; });
+document.querySelectorAll('.why-card').forEach((el, i) => { el.style.transitionDelay = `${i * 0.1}s`; });
+document.querySelectorAll('.review-card').forEach((el, i) => { el.style.transitionDelay = `${i * 0.12}s`; });
+document.querySelectorAll('.onestop-step').forEach((el, i) => { el.style.transitionDelay = `${i * 0.08}s`; });
 </script>
 </body>
 </html>
