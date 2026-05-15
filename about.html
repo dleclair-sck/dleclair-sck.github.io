@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet the Founder — Diana LeClair | SoCal Keys</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #F5EFE4; --cream: #FAF7F2; --ink: #1A1714; --gold: #C9A84C;
+    --gold-light: #E8C96D; --terracotta: #C4633A; --ocean: #2B5F75;
+    --warm-gray: #8C8278; --border: rgba(201,168,76,0.25);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--ink); font-family: 'Barlow', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 60px; background: rgba(250,247,242,0.96); backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 22px; letter-spacing: 3px; font-weight: 600; color: var(--ink); text-transform: uppercase; }
+  .nav-logo-text span { color: var(--gold); }
+  .nav-back { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--warm-gray); text-decoration: none; font-weight: 400; transition: color 0.3s; }
+  .nav-back:hover { color: var(--gold); }
+  .nav-cta { background: var(--gold); color: var(--ink); padding: 10px 24px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; text-decoration: none; transition: background 0.3s; }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  .founder-hero { padding-top: 80px; background: var(--ink); min-height: 320px; display: flex; align-items: flex-end; position: relative; overflow: hidden; }
+  .founder-hero-bg { position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 50%, rgba(201,168,76,0.12) 0%, transparent 60%), radial-gradient(circle at 80% 30%, rgba(43,95,117,0.3) 0%, transparent 50%); }
+  .founder-hero-content { position: relative; z-index: 2; padding: 60px 80px; width: 100%; }
+  .founder-eyebrow { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+  .founder-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+  .founder-hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 6vw, 88px); font-weight: 300; line-height: 1.0; color: var(--cream); letter-spacing: -1px; }
+  .founder-hero-title em { font-style: italic; color: var(--gold-light); }
+
+  .marquee-strip { background: var(--gold); padding: 13px 0; overflow: hidden; }
+  .marquee-track { display: flex; animation: marquee 22s linear infinite; white-space: nowrap; }
+  .marquee-item { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--ink); padding: 0 40px; font-weight: 600; display: inline-flex; align-items: center; gap: 40px; }
+  .marquee-item::after { content: '✦'; font-size: 9px; }
+  @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+  .founder-main { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .founder-photo-side { position: relative; background: var(--sand); }
+  .founder-photo-side img { width: 100%; height: 100%; min-height: 700px; object-fit: cover; object-position: center top; display: block; }
+  .founder-photo-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(26,23,20,0.88) 0%, transparent 100%); padding: 40px 36px; }
+  .founder-name { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: var(--cream); margin-bottom: 6px; }
+  .founder-title-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 500; }
+
+  .founder-bio-side { background: var(--cream); padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; }
+  .bio-eyebrow { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+  .bio-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--gold); }
+  .bio-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 3vw, 46px); font-weight: 300; line-height: 1.15; margin-bottom: 32px; }
+  .bio-title em { font-style: italic; color: var(--terracotta); }
+  .bio-text { font-size: 15px; line-height: 1.95; color: var(--warm-gray); margin-bottom: 22px; font-weight: 300; }
+  .bio-text strong { color: var(--ink); font-weight: 500; }
+  .bio-quote { border-left: 3px solid var(--gold); padding: 20px 28px; margin: 32px 0; background: var(--sand); }
+  .bio-quote p { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-style: italic; font-weight: 300; color: var(--ink); line-height: 1.6; }
+  .bio-quote span { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); display: block; margin-top: 10px; font-style: normal; font-family: 'Barlow', sans-serif; font-weight: 500; }
+  .bio-signature { margin-top: 36px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .bio-signature-name { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--ink); margin-bottom: 4px; }
+  .bio-signature-title { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+
+  .credentials-section { background: var(--sand); padding: 80px; }
+  .creds-title { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; color: var(--ink); margin-bottom: 52px; text-align: center; }
+  .creds-title em { font-style: italic; color: var(--terracotta); }
+  .creds-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .cred-card { background: white; padding: 36px 24px; text-align: center; border-bottom: 3px solid transparent; transition: all 0.3s; }
+  .cred-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .cred-icon { font-size: 34px; margin-bottom: 14px; }
+  .cred-num { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; color: var(--ink); line-height: 1; margin-bottom: 8px; }
+  .cred-num span { color: var(--gold); }
+  .cred-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--warm-gray); line-height: 1.6; }
+
+  .team-section { background: var(--ink); padding: 80px; }
+  .team-top { text-align: center; margin-bottom: 60px; }
+  .team-eyebrow { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 16px; }
+  .team-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 3.5vw, 52px); font-weight: 300; color: var(--cream); line-height: 1.15; margin-bottom: 20px; }
+  .team-title em { font-style: italic; color: var(--gold-light); }
+  .team-sub { font-size: 15px; line-height: 1.9; color: rgba(245,239,228,0.6); max-width: 640px; margin: 0 auto; }
+  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .team-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.12); padding: 32px 22px; text-align: center; transition: all 0.3s; position: relative; overflow: hidden; }
+  .team-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+  .team-card:hover::before { transform: scaleX(1); }
+  .team-card:hover { background: rgba(255,255,255,0.08); }
+  .team-icon { font-size: 30px; margin-bottom: 14px; }
+  .team-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 10px; }
+  .team-card-text { font-size: 12px; line-height: 1.7; color: rgba(245,239,228,0.5); }
+
+  .founder-cta { background: var(--ocean); padding: 80px; text-align: center; }
+  .founder-cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 54px); font-weight: 300; color: var(--cream); line-height: 1.2; margin-bottom: 20px; }
+  .founder-cta-title em { font-style: italic; color: var(--gold-light); }
+  .founder-cta p { font-size: 16px; line-height: 1.9; color: rgba(245,239,228,0.65); max-width: 560px; margin: 0 auto 40px; }
+  .founder-cta-btn { display: inline-block; background: var(--gold); color: var(--ink); padding: 18px 52px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; text-decoration: none; transition: background 0.3s; }
+  .founder-cta-btn:hover { background: var(--gold-light); }
+
+  footer { background: var(--ink); padding: 36px 80px; border-top: 1px solid rgba(201,168,76,0.2); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .footer-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 20px; letter-spacing: 3px; font-weight: 600; color: var(--cream); text-transform: uppercase; }
+  .footer-logo-text span { color: var(--gold); }
+  .footer-inner p { font-size: 11px; color: rgba(245,239,228,0.22); letter-spacing: 1px; }
+
+  .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 1024px) {
+    nav { padding: 16px 28px; }
+    .founder-hero-content { padding: 48px 32px; }
+    .founder-main { grid-template-columns: 1fr; }
+    .founder-photo-side img { min-height: 500px; }
+    .founder-bio-side { padding: 60px 32px; }
+    .credentials-section, .team-section, .founder-cta { padding: 60px 32px; }
+    .creds-grid, .team-grid { grid-template-columns: repeat(2, 1fr); }
+    footer { padding: 36px 32px; }
+    .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="38" height="38" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="35" cy="40" r="22" stroke="#C9A84C" stroke-width="7" fill="none"/>
+      <circle cx="35" cy="40" r="11" stroke="#C9A84C" stroke-width="4" fill="none"/>
+      <rect x="53" y="37" width="40" height="7" rx="3.5" fill="#C9A84C"/>
+      <rect x="74" y="44" width="7" height="11" rx="2.5" fill="#C9A84C"/>
+      <rect x="84" y="44" width="7" height="8" rx="2.5" fill="#C9A84C"/>
+      <rect x="63" y="44" width="7" height="14" rx="2.5" fill="#C9A84C"/>
+      <circle cx="28" cy="33" r="3.5" fill="#E8C96D" opacity="0.65"/>
+    </svg>
+    <div class="nav-logo-text">SoCal<span>Keys</span></div>
+  </a>
+  <a href="index.html" class="nav-back">← Back to Home</a>
+  <a href="index.html#contact" class="nav-cta">Get Started</a>
+</nav>
+
+<div class="founder-hero">
+  <div class="founder-hero-bg"></div>
+  <div class="founder-hero-content">
+    <div class="founder-eyebrow">The Expert Behind SoCal Keys</div>
+    <h1 class="founder-hero-title">Meet the <em>Founder</em></h1>
+  </div>
+</div>
+
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <div class="marquee-item">9+ Years Experience</div>
+    <div class="marquee-item">Airbnb Superhost</div>
+    <div class="marquee-item">143 Five-Star Reviews</div>
+    <div class="marquee-item">MBA Candidate</div>
+    <div class="marquee-item">Bilingual English & Spanish</div>
+    <div class="marquee-item">Orange County & San Diego</div>
+    <div class="marquee-item">Top 1% Guest Favorite</div>
+    <div class="marquee-item">Full-Service STR Expert</div>
+    <div class="marquee-item">9+ Years Experience</div>
+    <div class="marquee-item">Airbnb Superhost</div>
+    <div class="marquee-item">143 Five-Star Reviews</div>
+    <div class="marquee-item">MBA Candidate</div>
+    <div class="marquee-item">Bilingual English & Spanish</div>
+    <div class="marquee-item">Orange County & San Diego</div>
+    <div class="marquee-item">Top 1% Guest Favorite</div>
+    <div class="marquee-item">Full-Service STR Expert</div>
+  </div>
+</div>
+
+<div class="founder-main">
+  <div class="founder-photo-side fade-up">
+    <img src="diana.jpeg" alt="Diana LeClair — Founder & CEO, SoCal Keys">
+    <div class="founder-photo-overlay">
+      <div class="founder-name">Diana LeClair</div>
+      <div class="founder-title-label">Founder & CEO · SoCal Keys</div>
+    </div>
+  </div>
+  <div class="founder-bio-side fade-up">
+    <div class="bio-eyebrow">My Story</div>
+    <h2 class="bio-title">Built on <em>Experience.</em><br>Driven by Excellence.</h2>
+    <p class="bio-text">With over <strong>nine years of experience</strong> in luxury and short-term rental real estate across Orange County's competitive market, I built SoCal Keys on one simple belief — that every property deserves the same level of care, intention, and expertise that I bring to my own.</p>
+    <p class="bio-text">My expertise spans the full investment journey: <strong>property acquisition, renovation, interior design, and full-service management.</strong> I have personally purchased, renovated, designed, furnished, and managed STR properties — and that hands-on experience is exactly what sets SoCal Keys apart.</p>
+    <div class="bio-quote">
+      <p>"Over nearly a decade in this industry, I have hand-selected an elite team of trusted professionals who share my commitment to excellence — because your property deserves nothing less."</p>
+      <span>— Diana LeClair</span>
+    </div>
+    <p class="bio-text">As a current <strong>MBA candidate specializing in International Finance</strong> at Concordia University Irvine, I combine deep on-the-ground real estate expertise with a sharp investment and financial mindset — so your property isn't just managed, it's strategically optimized as an asset.</p>
+    <p class="bio-text"><strong>Bilingual in English and Spanish,</strong> I am proud to serve the diverse communities of Orange County and San Diego with the personal, boutique-level attention that only a founder-led company can deliver.</p>
+    <div class="bio-signature">
+      <div class="bio-signature-name">Diana LeClair</div>
+      <div class="bio-signature-title">Founder & CEO · SoCal Keys</div>
+    </div>
+  </div>
+</div>
+
+<div class="credentials-section">
+  <div class="creds-title">The Numbers That <em>Speak for Themselves</em></div>
+  <div class="creds-grid">
+    <div class="cred-card fade-up">
+      <div class="cred-icon">⭐</div>
+      <div class="cred-num">143<span>+</span></div>
+      <div class="cred-label">Five-Star Reviews on Airbnb</div>
+    </div>
+    <div class="cred-card fade-up">
+      <div class="cred-icon">🏆</div>
+      <div class="cred-num">Top <span>1%</span></div>
+      <div class="cred-label">Airbnb Guest Favorite</div>
+    </div>
+    <div class="cred-card fade-up">
+      <div class="cred-icon">📅</div>
+      <div class="cred-num">9<span>yr+</span></div>
+      <div class="cred-label">Luxury & STR Real Estate Experience</div>
+    </div>
+    <div class="cred-card fade-up">
+      <div class="cred-icon">💰</div>
+      <div class="cred-num">$150<span>K+</span></div>
+      <div class="cred-label">Annual Revenue — Single Property</div>
+    </div>
+  </div>
+</div>
+
+<div class="team-section">
+  <div class="team-top fade-up">
+    <div class="team-eyebrow">The People Behind the Properties</div>
+    <h2 class="team-title">An <em>Elite Team</em> Behind Every Property</h2>
+    <p class="team-sub">Over nearly a decade in this industry, I have assembled a hand-selected network of trusted professionals — each one chosen for their expertise, their standards, and their shared commitment to delivering excellence for every SoCal Keys client.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card fade-up">
+      <div class="team-icon">🏠</div>
+      <div class="team-card-title">STR Realtors</div>
+      <div class="team-card-text">Top specialists who know the OC and San Diego STR markets, zoning laws, and permit requirements inside and out.</div>
+    </div>
+    <div class="team-card fade-up">
+      <div class="team-icon">🔨</div>
+      <div class="team-card-title">Licensed Contractors</div>
+      <div class="team-card-text">Trusted renovation professionals who deliver quality work on time and on budget — every single project.</div>
+    </div>
+    <div class="team-card fade-up">
+      <div class="team-icon">📸</div>
+      <div class="team-card-title">Photographers & Videographers</div>
+      <div class="team-card-text">Professional visual storytellers who make every listing look stunning and convert browsers into bookers.</div>
+    </div>
+    <div class="team-card fade-up">
+      <div class="team-icon">✨</div>
+      <div class="team-card-title">Elite Cleaning Crews</div>
+      <div class="team-card-text">Meticulous cleaning teams trained to our exact 5-star standards — because spotless properties earn spotless reviews.</div>
+    </div>
+    <div class="team-card fade-up">
+      <div class="team-icon">🔧</div>
+      <div class="team-card-title">Maintenance Crews</div>
+      <div class="team-card-text">Responsive maintenance professionals available to handle any issue quickly — protecting your asset and your guest experience.</div>
+    </div>
+    <div class="team-card fade-up">
+      <div class="team-icon">🛋️</div>
+      <div class="team-card-title">Interior Designers</div>
+      <div class="team-card-text">Design professionals who create beautiful, durable spaces that photograph brilliantly and command premium nightly rates.</div>
+    </div>
+    <div class="team-card fade-up">
+      <div class="team-icon">📊</div>
+      <div class="team-card-title">STR Accountants</div>
+      <div class="team-card-text">Finance professionals who specialize in short-term rental tax strategy — including cost segregation and STR-specific deductions.</div>
+    </div>
+    <div class="team-card fade-up">
+      <div class="team-icon">⚖️</div>
+      <div class="team-card-title">Permit Specialists</div>
+      <div class="team-card-text">Experts who navigate the complex STR permitting landscape across Orange County and San Diego municipalities.</div>
+    </div>
+  </div>
+</div>
+
+<div class="founder-cta">
+  <h2 class="founder-cta-title">Ready to Work with <em>Diana & the Team?</em></h2>
+  <p>Whether you already own a property or are just beginning your STR journey, we are ready to guide you every step of the way — from the very first conversation to your very first 5-star review.</p>
+  <a href="index.html#contact" class="founder-cta-btn">Request a Free Consultation →</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">
+      <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="35" cy="40" r="22" stroke="#C9A84C" stroke-width="7" fill="none"/>
+        <circle cx="35" cy="40" r="11" stroke="#C9A84C" stroke-width="4" fill="none"/>
+        <rect x="53" y="37" width="40" height="7" rx="3.5" fill="#C9A84C"/>
+        <rect x="74" y="44" width="7" height="11" rx="2.5" fill="#C9A84C"/>
+        <rect x="84" y="44" width="7" height="8" rx="2.5" fill="#C9A84C"/>
+        <rect x="63" y="44" width="7" height="14" rx="2.5" fill="#C9A84C"/>
+        <circle cx="28" cy="33" r="3.5" fill="#E8C96D" opacity="0.65"/>
+      </svg>
+      <div class="footer-logo-text">SoCal<span>Keys</span></div>
+    </a>
+    <p>© 2025 SoCal Keys. All rights reserved. Orange County & San Diego's Premier Short Term Rental Experts.</p>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  document.querySelectorAll('.team-card').forEach((el, i) => { el.style.transitionDelay = `${i * 0.08}s`; });
+  document.querySelectorAll('.cred-card').forEach((el, i) => { el.style.transitionDelay = `${i * 0.1}s`; });
+</script>
+</body>
+</html>
