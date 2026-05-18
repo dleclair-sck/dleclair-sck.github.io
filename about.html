@@ -45,10 +45,11 @@
   @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 
   .founder-main { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
-  .founder-photo-side { position: relative; background: var(--sand); }
-  .founder-photo-side img { width: 100%; height: 100%; min-height: 700px; object-fit: cover; object-position: center top; display: block; }
-  .founder-photo-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(26,23,20,0.88) 0%, transparent 100%); padding: 40px 36px; }
-  .founder-name { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: var(--cream); margin-bottom: 6px; }
+  .founder-photo-side { position: relative; background: var(--sand); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 48px; }
+  .founder-photo-frame { position: relative; width: 100%; max-width: 460px; }
+  .founder-photo-side img { width: 100%; height: auto; max-height: 640px; object-fit: cover; object-position: center top; display: block; }
+  .founder-photo-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(26,23,20,0.88) 0%, transparent 100%); padding: 32px 28px; }
+  .founder-name { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--cream); margin-bottom: 6px; }
   .founder-title-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 500; }
 
   .founder-bio-side { background: var(--cream); padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; }
@@ -112,7 +113,8 @@
     nav { padding: 16px 28px; }
     .founder-hero-content { padding: 48px 32px; }
     .founder-main { grid-template-columns: 1fr; }
-    .founder-photo-side img { min-height: 500px; }
+    .founder-photo-side { padding: 40px 24px; }
+    .founder-photo-frame { max-width: 100%; }
     .founder-bio-side { padding: 60px 32px; }
     .credentials-section, .team-section, .founder-cta { padding: 60px 32px; }
     .creds-grid, .team-grid { grid-template-columns: repeat(2, 1fr); }
@@ -171,10 +173,12 @@
 
 <div class="founder-main">
   <div class="founder-photo-side fade-up">
-    <img src="diana.jpeg" alt="Diana LeClair — Founder & CEO, SoCal Keys">
-    <div class="founder-photo-overlay">
-      <div class="founder-name">Diana LeClair</div>
-      <div class="founder-title-label">Founder & CEO · SoCal Keys</div>
+    <div class="founder-photo-frame">
+      <img src="diana.jpeg" alt="Diana LeClair — Founder & CEO, SoCal Keys">
+      <div class="founder-photo-overlay">
+        <div class="founder-name">Diana LeClair</div>
+        <div class="founder-title-label">Founder & CEO · SoCal Keys</div>
+      </div>
     </div>
   </div>
   <div class="founder-bio-side fade-up">
@@ -182,8 +186,9 @@
     <h2 class="bio-title">Built on <em>Experience.</em><br>Driven by Excellence.</h2>
     <p class="bio-text">With over <strong>nine years of experience</strong> in luxury and short-term rental real estate across Orange County's competitive market, I built SoCal Keys on one simple belief — that every property deserves the same level of care, intention, and expertise that I bring to my own.</p>
     <p class="bio-text">My expertise spans the full investment journey: <strong>property acquisition, renovation, interior design, and full-service management.</strong> I have personally purchased, renovated, designed, furnished, and managed STR properties — and that hands-on experience is exactly what sets SoCal Keys apart.</p>
+    <p class="bio-text">Over nearly a decade in this industry, I have assembled an <strong>elite team of trusted professionals</strong> who share my commitment to excellence — top STR realtors, licensed contractors, professional photographers and videographers, interior designers, experienced cleaning crews, responsive maintenance teams, and STR-savvy accountants. Every expert in our network was hand-selected for one reason: to ensure your property performs at the highest level, every single day.</p>
     <div class="bio-quote">
-      <p>"Over nearly a decade in this industry, I have hand-selected an elite team of trusted professionals who share my commitment to excellence — because your property deserves nothing less."</p>
+      <p>"So your property isn't just managed — it's strategically optimized as an asset."</p>
       <span>— Diana LeClair</span>
     </div>
     <p class="bio-text">As a current <strong>MBA candidate specializing in International Finance</strong> at Concordia University Irvine, I combine deep on-the-ground real estate expertise with a sharp investment and financial mindset — so your property isn't just managed, it's strategically optimized as an asset.</p>
