@@ -18,6 +18,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Orange County Short-Term Rental Investment Experts">
   <meta name="twitter:description" content="From acquisition and cost segregation to five-star design, launch, and management—one team for your Orange County STR investment.">
+  <link rel="icon" href="logo-new.png" type="image/png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,12 +45,14 @@
 
 /* Five-star guest proof */
 .reviews{background:var(--navy2);color:white;overflow:hidden}.reviews-head{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:clamp(45px,8vw,110px);align-items:center}.reviews-head h2{max-width:840px}.reviews-head>div:first-child>p:last-child{max-width:700px;color:#c7d9e7;font-size:1.12rem;margin:28px 0 0}.rating-seal{width:270px;height:270px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:var(--yellow);color:var(--navy2);box-shadow:0 0 0 18px rgba(255,213,31,.12),0 25px 70px rgba(0,0,0,.22)}.rating-seal strong{font:800 5.2rem/.9 Manrope,sans-serif;letter-spacing:-.08em}.rating-seal span{font-size:1.3rem;letter-spacing:.16em;margin:14px 0 8px;color:#bc8500}.rating-seal small{font:800 .75rem/1.35 Manrope,sans-serif;letter-spacing:.1em;text-transform:uppercase}.reviews-proof{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,95px);align-items:center;margin:70px 0 22px;padding:54px 0;border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2)}.review-count{font:800 clamp(2.35rem,4.5vw,4.9rem)/1.05 Manrope,sans-serif;letter-spacing:-.055em;margin:0}.review-count em{font-style:normal;color:var(--coral)}.reviews-proof>div>p{color:#c7d9e7;font-size:1.08rem;margin:0 0 25px}.review-link{background:white;color:var(--navy2)}.testimonials{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.testimonial-card{display:flex;flex-direction:column;padding:clamp(28px,4vw,42px);border-radius:24px;background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.16)}.testimonial-stars{color:var(--yellow);font-size:1.05rem;letter-spacing:.14em;margin-bottom:28px}.testimonial-card blockquote{font:600 clamp(1.16rem,1.8vw,1.45rem)/1.5 Manrope,sans-serif;letter-spacing:-.025em;margin:0 0 32px}.testimonial-card>p{margin:auto 0 0;color:#9fb8ca;font-size:.78rem;font-weight:700;letter-spacing:.025em}.testimonial-card>p span{color:var(--aqua);padding:0 3px}.review-source{margin:22px 0 0;color:#8facbf;font-size:.75rem}
+
+/* STR investment insights */
+.insights{background:#f4fcfc}.insights-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr;gap:18px}.insight-card{display:flex;flex-direction:column;min-height:360px;padding:34px;border:1px solid var(--line);border-radius:26px;background:#fff}.insight-card.featured{background:var(--navy);color:#fff}.insight-tag{font:800 .72rem/1.2 Manrope,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#087c8f}.featured .insight-tag{color:var(--aqua)}.insight-card h3{font-size:clamp(1.45rem,2.2vw,2.15rem);margin:38px 0 18px}.insight-card p{color:var(--muted);margin:0 0 28px}.featured p{color:#c7d9e7}.insight-link{margin-top:auto;font:800 .9rem/1.3 Manrope,sans-serif;color:#d7355a}.featured .insight-link{color:var(--yellow)}.insight-note{margin-top:auto;color:#708497!important;font-size:.82rem}
+@media(max-width:950px){.insights-grid{grid-template-columns:1fr 1fr}.insight-card.featured{grid-column:1/3}}
+@media(max-width:620px){.insights-grid{grid-template-columns:1fr}.insight-card.featured{grid-column:auto}.insight-card{min-height:0}.insight-card h3{margin-top:26px}}
 @media(max-width:900px){.reviews-head{grid-template-columns:1fr}.rating-seal{width:230px;height:230px}.reviews-proof{grid-template-columns:1fr}.testimonials{grid-template-columns:1fr}}
 @media(max-width:620px){.rating-seal{width:200px;height:200px}.rating-seal strong{font-size:4.1rem}.reviews-proof{margin-top:48px;padding:38px 0}.testimonial-card{padding:25px}.testimonial-card blockquote{font-size:1.08rem}}
 
-/* Investor FAQ */
-.faq{background:#f4fcfc}.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.faq details{background:#fff;border:1px solid var(--line);border-radius:22px;padding:0 26px}.faq summary{cursor:pointer;list-style:none;padding:26px 42px 26px 0;position:relative;font:800 1.08rem/1.35 Manrope,sans-serif;color:var(--navy)}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:"+";position:absolute;right:0;top:21px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#eafbfc;color:#087c8f;font-size:1.35rem}.faq details[open] summary:after{content:"−"}.faq details p{color:var(--muted);margin:0 0 26px}.faq details:focus-within{outline:3px solid rgba(0,217,223,.25);outline-offset:2px}
-@media(max-width:760px){.faq-grid{grid-template-columns:1fr}.faq details{padding:0 20px}}
 </style>
   <script type="application/ld+json">
   {
@@ -60,7 +63,9 @@
         "@id": "https://socalstrexperts.com/#organization",
         "name": "SoCal STR Experts",
         "alternateName": "SoCal Short Term Rental Experts",
-        "url": "https://socalstrexperts.com/",        "email": "SoCalSTRExperts@gmail.com",
+        "url": "https://socalstrexperts.com/",
+        "logo": "https://socalstrexperts.com/logo-new.png",
+        "email": "SoCalSTRExperts@gmail.com",
         "areaServed": {"@type": "AdministrativeArea", "name": "Orange County, California"},
         "founder": {"@type": "Person", "name": "Diana LeClair", "jobTitle": "Founder and Designer"},
         "employee": {"@type": "Person", "name": "Jeremy LeClair", "jobTitle": "STR Realtor Expert", "description": "Orange County Realtor with Compass Private Client Group OC, DRE #02161730"},
@@ -87,26 +92,16 @@
         "name": "SoCal STR Experts",
         "publisher": {"@id": "https://socalstrexperts.com/#organization"},
         "inLanguage": "en-US"
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://socalstrexperts.com/#faq",
-        "mainEntity": [
-          {"@type": "Question", "name": "What does SoCal STR Experts help investors with?", "acceptedAnswer": {"@type": "Answer", "text": "SoCal STR Experts coordinates short-term rental acquisition analysis, cost segregation resources, renovation, design, furnishing, launch, and management through one connected team."}},
-          {"@type": "Question", "name": "Where does SoCal STR Experts serve investors?", "acceptedAnswer": {"@type": "Answer", "text": "SoCal STR Experts serves short-term rental investors in Orange County, California."}},
-          {"@type": "Question", "name": "Why should renovation and furnishing be included in STR underwriting?", "acceptedAnswer": {"@type": "Answer", "text": "Renovation and furnishing are part of the capital plan. Guest-focused improvements can support listing conversion, average daily rate, occupancy, durability, repeat bookings, and long-term return on investment."}},
-          {"@type": "Question", "name": "How can cost segregation relate to a short-term rental investment?", "acceptedAnswer": {"@type": "Answer", "text": "A qualified cost segregation study may identify eligible property components for shorter depreciation periods. SoCal STR Experts helps investors surface the opportunity early and coordinate with qualified tax professionals; individual results vary."}}
-        ]
       }
     ]
   }
   </script>
+  <style>.brand img{clip-path:circle(47.5% at 50% 50%)}</style>
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="SoCal Short Term Rental Experts home">
-      <svg class="brand-key" viewBox="0 0 64 64" aria-hidden="true"><circle cx="22" cy="32" r="12" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="22" cy="32" r="4" fill="currentColor"/><path d="M34 32h22m-8 0v8m-7-8v6" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg>
-      <span>SoCal STR Experts</span>
+      <img src="logo-new.png" alt="SoCal Short Term Rental Experts">
     </a>
     <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav id="nav" aria-label="Primary navigation">
@@ -114,6 +109,7 @@
       <a href="#how">How we help</a>
       <a href="#work">Our work</a>
       <a href="#cost-seg">Cost segregation</a>
+      <a href="#insights">Insights</a>
       <a href="#team">Our team</a>
       <a class="nav-cta" href="#contact">Start your STR plan</a>
     </nav>
@@ -269,28 +265,30 @@
       </div>
     </section>
 
-    <section class="section faq" id="faq">
+    <section class="section insights" id="insights">
       <div class="section-heading split">
-        <div><p class="eyebrow coral">Orange County STR investing</p><h2>Questions investors ask before committing capital.</h2></div>
-        <p>Clear answers help investors test the thesis, understand the execution plan, and decide whether a short-term rental fits their portfolio.</p>
+        <div><p class="eyebrow coral">STR investment insights</p><h2>Clear thinking for better capital decisions.</h2></div>
+        <p>Practical perspectives on acquisition, underwriting, renovation, tax planning, guest experience, and long-term STR performance—written for investors who expect rigor behind the opportunity.</p>
       </div>
-      <div class="faq-grid">
-        <details>
-          <summary>What does SoCal STR Experts help investors with?</summary>
-          <p>We coordinate STR acquisition analysis, cost segregation resources, renovation, design, furnishing, launch, and management through one connected team.</p>
-        </details>
-        <details>
-          <summary>Where do you serve short-term rental investors?</summary>
-          <p>We serve investors in Orange County, California, with local market insight and a coordinated path from property search through guest-ready operations.</p>
-        </details>
-        <details>
-          <summary>Why include renovation and furnishing in the underwriting?</summary>
-          <p>They are part of the capital plan. Guest-focused improvements can support listing conversion, ADR, occupancy, durability, repeat bookings, and long-term ROI.</p>
-        </details>
-        <details>
-          <summary>How can cost segregation relate to an STR investment?</summary>
-          <p>A qualified study may identify eligible components for shorter depreciation periods. We surface the opportunity early and coordinate with qualified tax professionals; individual results vary.</p>
-        </details>
+      <div class="insights-grid">
+        <article class="insight-card featured">
+          <span class="insight-tag">Latest insight · September 2026</span>
+          <h3>From scroll-stopping to income-producing: the STR design effect</h3>
+          <p>Why memorable spaces, five-star hospitality, durable finishes, and repeat guests can strengthen an STR’s competitive position and support long-term performance.</p>
+          <a class="insight-link" href="blog.html">Read the latest insight <span>→</span></a>
+        </article>
+        <article class="insight-card">
+          <span class="insight-tag">Tax strategy</span>
+          <h3>Where cost segregation fits in an STR investment thesis</h3>
+          <p>How investors can evaluate depreciation timing alongside basis, planned improvements, cash flow, and hold strategy with qualified tax professionals.</p>
+          <p class="insight-note">Coming next in the series</p>
+        </article>
+        <article class="insight-card">
+          <span class="insight-tag">Asset performance</span>
+          <h3>Why renovation and furnishing belong in the underwriting</h3>
+          <p>Thoughtful CapEx and guest-ready design can strengthen marketability, operational durability, reviews, and the potential for repeat stays.</p>
+          <p class="insight-note">More investor insights published weekly</p>
+        </article>
       </div>
     </section>
 
@@ -347,7 +345,7 @@
   </main>
 
   <footer>
-    <a class="brand footer-brand" href="#top"><svg class="brand-key" viewBox="0 0 64 64" aria-hidden="true"><circle cx="22" cy="32" r="12" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="22" cy="32" r="4" fill="currentColor"/><path d="M34 32h22m-8 0v8m-7-8v6" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></svg><span>SoCal STR Experts</span></a>
+    <a class="brand footer-brand" href="#top"><img src="logo-new.png" alt="SoCal Short Term Rental Experts"></a>
     <div class="footer-contact">
       <a href="mailto:SoCalSTRExperts@gmail.com">SoCalSTRExperts@gmail.com</a>
       <a href="https://www.instagram.com/socalstrexperts" target="_blank" rel="noopener noreferrer">Instagram</a>
